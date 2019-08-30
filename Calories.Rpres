@@ -1,0 +1,58 @@
+Calories
+========================================================
+author: Vishnu Pothugunta 
+date: AUg 30 2018
+autosize: true
+
+Motive
+========================================================
+
+To calculate calories burned, different applications make
+use of different factors but the easiest way to determine
+is by monitoring the heart rate.
+
+Number of calories depends on 
+- Heart rate
+- Time interval
+- Age
+- Weight
+
+Calculation formula
+========================================================
+
+Calories Burned = [(Age x 0.2017) + (Weight x 0.09036) + (Heart Rate x 0.6309) - 55.0969] x Time / 4.184
+
+Age in years.
+Weight in pounds.
+HR in beats per minute. 
+Time in minutes.
+
+*Note : Source is from quora.
+https://www.quora.com/What-is-the-formula-to-calculate-calories-burnt-by-running
+
+Rcode
+========================================================
+
+```{r, eval=FALSE}
+   
+  output$cals <-  ( reactive
+                           ({
+    ((input$age*0.2017)
+     +(input$Wt*0.09036)+
+       (input$hr*0.6309)
+     -55.0969)*input$time/4.184
+    
+  })
+  )
+
+```
+
+Links
+========================================================
+
+Please check the following html link for the shinny app
+https://vspothug.shinyapps.io/Calories/
+
+Please check the below for the github link
+https://github.com/Vishnu1P/Calories
+
